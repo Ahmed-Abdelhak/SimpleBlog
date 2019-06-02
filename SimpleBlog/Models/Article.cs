@@ -17,20 +17,21 @@ namespace SimpleBlog.Models
         [Required]
         public string Content { get; set; }
 
-        [Required]
-        public bool IsPublished { get; set; }
+        [Required] public bool IsPublished { get; set; } = false;
 
         public DateTime? DatePublished { get; set; }
 
 
-        [ForeignKey("Category")]
-        public int Fk_CategoryId { get; set; }
+      
         public Category Category { get; set; }
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
 
 
-        [ForeignKey("Publisher")]
-        public int Fk_PublisherId { get; set; }
+
         public ApplicationUser Publisher { get; set; }
+        [ForeignKey("Publisher")]
+        public string PublisherId { get; set; }
 
 
         public ICollection<Comment> Comments { get; set; }

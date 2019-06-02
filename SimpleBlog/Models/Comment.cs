@@ -13,13 +13,15 @@ namespace SimpleBlog.Models
 
         public DateTime? CommentDate { get; set; }
 
-        [ForeignKey("Commenter")]
-        public int Fk_CommenterId { get; set; }
+       
         public ApplicationUser Commenter { get; set; }
+        [ForeignKey("Commenter")]
+        public string CommenterId { get; set; }
 
-        [ForeignKey("Article")]
-        public int Fk_ArticleId { get; set; }
+        
         public Article Article { get; set; }
+        [ForeignKey("Article")]
+        public int ArticleId { get; set; }
 
     }
 }
