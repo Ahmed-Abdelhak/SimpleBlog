@@ -21,6 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Admin Dashboard", "Index", "Dashboard")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -28,7 +29,6 @@
         </div>
     </div>
 <div class="container body-content">
-    @Html.Partial("_Sidebar_Categories_Partial")
     @RenderBody()
     <hr/>
     <footer>
