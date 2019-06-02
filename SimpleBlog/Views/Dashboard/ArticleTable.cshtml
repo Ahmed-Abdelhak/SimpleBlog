@@ -1,0 +1,50 @@
+﻿@model SimpleBlog.ViewModels.ArticleViewModel
+@{
+    ViewBag.Title = "ArticleTable";
+}
+
+<div class="thumbnail">
+
+    <div class="caption">
+        <table class="table table-hover table-striped" id="ArticlesTable">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Published</th>
+                <th>Date</th>
+                <th>Publisher</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var article in Model.Articles)
+            {
+
+                <tr id="id-@article.Id">
+
+                    <td>
+                        @article.Id
+                    </td>
+                    <td>
+                        @article.Title
+                    </td>
+                    <td>
+                        @article.Category.Name
+                    </td>
+                    <td>
+                        @article.IsPublished
+                    </td>
+                    <td>
+                        @article.DatePublished
+                    </td>
+                    <td>
+                        @article.Publisher.UserName
+                    </td>
+
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

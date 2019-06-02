@@ -194,6 +194,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ArticleViewModel.cs" />
     <Compile Include="ViewModels\CategoryFilterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -429,6 +430,8 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_With_SideBar.cshtml" />
+    <Content Include="Views\Dashboard\AddArticle_Partial.cshtml" />
+    <Content Include="Views\Dashboard\ArticleTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SimpleBlog.Models;
+using SimpleBlog.ViewModels;
 
 namespace SimpleBlog.Controllers
 {
@@ -26,8 +27,26 @@ namespace SimpleBlog.Controllers
 
         public ActionResult Index()
         {
-            var articles = _context.Articles.Include(a => a.Category).ToList();
-            return View(articles);
+            var articleViewModel = new ArticleViewModel()
+            {
+                Articles = _context.Articles.Include(a => a.Category).Include(a=>a.Publisher).ToList(),
+                Categories = _context.Categories.ToList()
+
+        };
+            return View(articleViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddArticle(Article article)
+        {
+            if (article.Title != null)
+            {
+                _context.Articles.Add(article);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

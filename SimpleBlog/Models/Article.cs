@@ -17,7 +17,7 @@ namespace SimpleBlog.Models
         [Required]
         public string Content { get; set; }
 
-        [Required] public bool IsPublished { get; set; } = false;
+        [Required] public bool IsPublished { get; set; }
 
         public DateTime? DatePublished { get; set; }
 
