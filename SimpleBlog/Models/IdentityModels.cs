@@ -29,6 +29,11 @@ namespace SimpleBlog.Models
         {
         }
 
+        public virtual DbSet<Article> Articles { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

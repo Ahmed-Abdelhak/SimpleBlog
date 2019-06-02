@@ -1,0 +1,19 @@
+﻿@using SimpleBlog.ViewModels
+
+@{
+    var cats = (CategoryFilterViewModel)ViewBag.CategoryFilterViewModel;
+
+}
+<div class="sidenav">
+    <h4 class="btn btn-default" id="CategoryTree">Categories</h4>
+    <ul id="nav">
+
+        @foreach (var cat in cats.Categories)
+        {
+                        <li>@Html.ActionLink(" " + cat.Name, "Index", "Category", new { id = cat.Id }, null)</li>
+        }
+
+
+
+    </ul>
+</div>

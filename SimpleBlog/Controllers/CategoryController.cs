@@ -6,18 +6,11 @@ using System.Web.Mvc;
 
 namespace SimpleBlog.Controllers
 {
-    public class HomeController : BaseController
+    public class CategoryController : BaseController
     {
+        // GET: Category
         public ActionResult Index()
         {
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
