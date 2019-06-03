@@ -1,3 +1,31 @@
-﻿@{
+﻿@using SimpleBlog.Models
+@model SimpleBlog.ViewModels.ArticleViewModel
+@{
+    ViewBag.Title = ViewBag.CatName;
     Layout = "../Shared/_Layout_With_SideBar.cshtml";
+}
+
+<h2>Latest Published Articles on "@ViewBag.CatName" Category</h2>
+
+@foreach (var article in Model.Articles)
+{
+
+    <div class="thumbnail">
+
+        <div class="caption">
+
+            <h3>@article.Title</h3>
+            <hr />
+            <p class="text-right">Posted in @article.Category.Name by @article.Publisher.UserName on @article.DatePublished</p>
+            <br />
+            @{
+                var imgUrl = Url.Content("~/Content/images/Articles/" + HelperFunctions.MakeValidFileName(article.Title) + ".png") + "?time=" + DateTime.Now.ToString();
+
+                <img class="center-article-img" id="Article-Img" src="@imgUrl" height="371" width="660" />
+            }
+            <br />
+            <p class="text-left">@article.Content</p>
+
+        </div>
+    </div>
 }

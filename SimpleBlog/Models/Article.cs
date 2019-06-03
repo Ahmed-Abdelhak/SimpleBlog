@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-
 namespace SimpleBlog.Models
 {
     public class Article
@@ -21,7 +20,8 @@ namespace SimpleBlog.Models
 
         public DateTime? DatePublished { get; set; }
 
-
+        [NotMapped]
+        public HttpPostedFileBase ArticleImage { get; set; }
       
         public Category Category { get; set; }
         [ForeignKey("Category")]

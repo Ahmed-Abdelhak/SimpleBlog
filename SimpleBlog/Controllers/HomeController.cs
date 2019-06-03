@@ -29,7 +29,11 @@ namespace SimpleBlog.Controllers
         {
             var articles = new ArticleViewModel()
             {
-                Articles = _context.Articles.Include(a=>a.Category).Include(a=>a.Publisher).OrderByDescending(a=>a.DatePublished).ToList()
+                Articles = _context.Articles.Where(a=>a.IsPublished == true)
+                    .Include(a=>a.Category)
+                    .Include(a=>a.Publisher)
+                    .OrderByDescending(a=>a.DatePublished)
+                    .ToList(),
             };
             return View(articles);
         }

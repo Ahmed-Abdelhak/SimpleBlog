@@ -2,7 +2,7 @@
 @model SimpleBlog.ViewModels.ArticleViewModel
 
 
-@using (Html.BeginForm("AddArticle", "Dashboard", FormMethod.Post))
+@using (Html.BeginForm("AddArticle", "Dashboard", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 <div class="modal fade" id="myModal-AddArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -36,6 +36,12 @@
                     @Html.LabelFor(e => e.Article.CategoryId)
                     @Html.DropDownListFor(e => e.Article.CategoryId, new SelectList(@Model.Categories, "Id", "Name"), "Select Category", new {@class = "form-control"})
                     @Html.ValidationMessageFor(e => e.Article.CategoryId)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(e => e.Article.ArticleImage)
+                    <input type="file" name="Article.ArticleImage" id="Article.ArticleImage" />
+                    @Html.ValidationMessageFor(e => e.Article.ArticleImage)
 
                 </div>
                 <div class="form-group">

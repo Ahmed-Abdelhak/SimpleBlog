@@ -10,7 +10,7 @@
 
         @foreach (var cat in cats.Categories)
         {
-                        <li>@Html.ActionLink(" " + cat.Name, "Index", "Category", new { id = cat.Id }, null)</li>
+                        <li>@Html.ActionLink(" " + cat.Name, "Index", "Category", new { id = cat.Id, Name = cat.Name }, null)</li>
         }
 
 
