@@ -12,5 +12,7 @@ namespace SimpleBlog.ViewModels
         public ICollection<Article> Articles { get; set; }
         public Article Article { get; set; }
         public Category Category { get; set; }
+        public Comment Comment { get; set; }
+        public ICollection<Comment> Comments { get; set; }  
     }
 }

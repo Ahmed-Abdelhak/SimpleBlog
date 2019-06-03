@@ -309,6 +309,7 @@
     <Content Include="Content\DataTables\images\sort_both.png" />
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\loading-indicator.css" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -388,6 +389,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -433,6 +436,9 @@
     <Content Include="Views\Shared\_Layout_With_SideBar.cshtml" />
     <Content Include="Views\Dashboard\AddArticle_Partial.cshtml" />
     <Content Include="Views\Dashboard\ArticleTable.cshtml" />
+    <Content Include="Views\Dashboard\CategoryTable.cshtml" />
+    <Content Include="Views\Category\commentAdd_Partial.cshtml" />
+    <Content Include="Views\Home\commentAdd_Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

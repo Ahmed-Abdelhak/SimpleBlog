@@ -50,7 +50,7 @@ textarea {
     color: #f1f1f1;
 }
 
-.thumbnail {
+.article-body {
     background-color: beige;
 }
 p.text-right.article-info {
@@ -62,4 +62,17 @@ p.text-right.article-info {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.comment-area {
+    background-color: aquamarine;
+}
+
+.comments-render {
+    background-color: #f2dede;
+}
+
+
+span.field-validation-error {
+    color: red;
 }

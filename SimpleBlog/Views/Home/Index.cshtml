@@ -10,7 +10,7 @@
 @foreach (var article in Model.Articles)
 {
 
-    <div class="thumbnail">
+    <div class="thumbnail article-body">
 
         <div class="caption">
 
@@ -26,6 +26,116 @@
             <br />
             <p class="text-left">@article.Content</p>
 
+
+            @*comment Submit Area*@
+            <div class="thumbnail comment-area">
+
+                <div class="caption">
+                    <h4>Leave a Comment</h4>
+
+                    @using (Ajax.BeginForm("AddComment", "Home", new AjaxOptions()
+                    {
+                        Confirm = "Are you Sure ?",
+                        HttpMethod = "Post",
+                        UpdateTargetId = "comments-area-" + @article.Id,
+                        InsertionMode = InsertionMode.InsertAfter,
+                        OnSuccess = "ClearTextArea();"
+
+                    }))
+                    {
+                        @Html.HiddenFor(c => c.Comment.Id)
+                        @Html.HiddenFor(c => c.Comment.CommentDate, new { Value = @DateTime.Now })
+                        @Html.HiddenFor(c => c.Comment.ArticleId, new { Value = @article.Id })
+                        @Html.TextAreaFor(c => c.Comment.Content, new { @class = "form-control", style = "width: 100%; max-width: 100%;" })
+                        @Html.ValidationMessageFor(c => c.Comment.Content)
+                        @Html.AntiForgeryToken()
+                        <br />
+                        <input type="submit" value="Comment" style="float: right" class="btn btn-primary" />
+                        <br />
+                        <br />
+                    }
+
+                </div>
+            </div>
+
+            @*comments*@
+            <div class="thumbnail comments-render">
+
+                <div class="caption">
+                    <h3>Comments</h3>
+
+                    <div id="comments-area-@article.Id">
+                        @foreach (var comment in article.Comments)
+                        {
+                            <div id="@comment.Id">
+                                <div class="text-right">
+                                    @comment.CommentDate
+                                </div>
+                                <div>
+                                    @comment.Content
+                                </div>
+                            </div>
+                            <hr />
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+}
+
+
+<div class="loading-indicator">
+    <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+
+@section styles
+{
+    <link href="~/Content/loading-indicator.css" rel="stylesheet" />
+    <style>
+        .p-m-1 {
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+
+        .addNew {
+            padding-right: 0px;
+        }
+    </style>
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ajaxStart(function () {
+            $(".loading-indicator").css("display", "flex");
+        });
+
+        $(document).ajaxStop(function () {
+            $(".loading-indicator").hide();
+        });
+
+        function ClearTextArea() {
+            var textAreas = document.querySelectorAll("#Comment_Content");
+            textAreas.forEach(function (el) {
+                el.value = "";
+            });
+        }
+
+
+    </script>
+
 }

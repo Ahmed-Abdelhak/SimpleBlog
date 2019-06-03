@@ -8,7 +8,7 @@ namespace SimpleBlog.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please write a comment!")]
         public string Content { get; set; }
 
         public DateTime? CommentDate { get; set; }
