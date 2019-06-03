@@ -76,3 +76,6 @@ p.text-right.article-info {
 span.field-validation-error {
     color: red;
 }
+h2.marginedh2 {
+    margin-bottom: -20px;
+}

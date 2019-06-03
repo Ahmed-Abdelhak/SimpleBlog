@@ -4,14 +4,26 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 
-<h2>Articles</h2>
+<h2 class="marginedh2">Categories</h2>
 
 
+<button type="button" class="btn btn-success" style="float: right" data-toggle="modal" data-target="#myModal-AddCategory">
+    Add
+</button>
+<br />
+<br />
+
+@Html.Partial("CategoryTable")
+@Html.Partial("AddCategory_Partial")
+
+<hr/>
+
+<h2 class="marginedh2">Articles</h2>
 <button type="button" class="btn btn-success" style="float: right" data-toggle="modal" data-target="#myModal-AddArticle">
     Add
 </button>
-<br/>
-<br/>
+<br />
+<br />
 
 @Html.Partial("ArticleTable")
 @Html.Partial("AddArticle_Partial")
@@ -21,6 +33,7 @@
     <script>
         $(document).ready(function () {
             $("#ArticlesTable").DataTable();
+            $("#CategoryTable").DataTable();
         });
 
     </script>

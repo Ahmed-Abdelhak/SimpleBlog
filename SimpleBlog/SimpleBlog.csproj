@@ -439,6 +439,7 @@
     <Content Include="Views\Dashboard\CategoryTable.cshtml" />
     <Content Include="Views\Category\commentAdd_Partial.cshtml" />
     <Content Include="Views\Home\commentAdd_Partial.cshtml" />
+    <Content Include="Views\Dashboard\AddCategory_Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,2 +1,31 @@
-﻿@model dynamic
+﻿@model SimpleBlog.ViewModels.ArticleViewModel
 
+<div class="thumbnail">
+
+    <div class="caption">
+        <table class="table table-hover table-striped" id="CategoryTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cat in Model.Categories)
+                {
+
+                    <tr id="id-@cat.Id">
+
+                        <td>
+                            @cat.Id
+                        </td>
+                        <td>
+                            @cat.Name
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

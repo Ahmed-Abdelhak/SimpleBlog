@@ -51,7 +51,6 @@ namespace SimpleBlog.Controllers
 
             if (article.ArticleImage != null && article.ArticleImage.ContentLength > 0)
             {
-                //var articleDb = _context.Articles.Single(a => a.Title == article.Title);
                 var title = HelperFunctions.MakeValidFileName(article.Title);
                 var fileExt = Path.GetExtension(article.ArticleImage.FileName);
                 var fnm = title + ".png";
@@ -73,6 +72,17 @@ namespace SimpleBlog.Controllers
 
         }
 
-       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddCategory(Category category)
+        {
+            if (category.Name != null)
+            {
+                _context.Categories.Add(category);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+
+        }
     }
 }
