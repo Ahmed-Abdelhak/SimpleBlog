@@ -1,6 +1,8 @@
 # SimpleBlog
 A Simple Blog to publish new Articles by the Admin with a nice image, where visitors can comment
 
+- ScreenShot : https://i.imgur.com/FGiE9SU.png
+
 # Features :
 1. Only admin can add articles.
 2. Admin should assign a category to each article they add.
