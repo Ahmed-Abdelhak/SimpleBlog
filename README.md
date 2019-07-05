@@ -30,8 +30,8 @@ A Simple Blog to publish new Articles by the Admin with a nice image, where visi
 12. head to :  http://localhost:{port}/Dashboard ( to add new Categories ) or ( add new Articles ) : https://i.imgur.com/gWylgqe.png
     ( Disclaimer: you will not be able to view the Dashboard unless you are in the role:Admin , and of course "logged in" xD ) 
     
-13. open a new chrome tab and copy any article ( tip:  you can fetch some raw articles from BBC website xD )
-14. Add the Articles ( if the field "IsPublished" not checked, the Article will NOT be visible in the Home Page, nor the Category page)
+13. open a new chrome tab and copy any article ( Tip:  you can steal some raw articles from BBC website xD )
+14. Add the Article ( if the field "IsPublished" not checked, the Article will NOT be visible in the Home Page, nor in its assigned Category)
 15. go back to the Index page : http://localhost:{port}/
 16. logOff ( or you can open the Index Page in an incognito chrome window )
 17. post a comment as a Visitor : https://i.imgur.com/TnrCe2g.png
