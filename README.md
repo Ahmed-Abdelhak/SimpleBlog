@@ -22,7 +22,7 @@ A Simple Blog to publish new Articles by the Admin with a nice image, where visi
 
 7. Open the file "AccountController.cs" and scroll down to the "Register" method ( we want to register a new account as Admin )
 8. uncomment these few lines : https://i.imgur.com/R8Y9kEi.png
-   ( for Best practices, this step, the above step and step No.11 could be done through a separate Migration, or through an Enterprise/Group Policy Module)
+   ( for Best practices, this step, the above step and step No.11 could be done through a separate Migration, like i did with the Project: "Facility Manager" )
 
 9. Compile your project by pressing CTRL+F5
 10. head to : http://localhost:{port}/Account/Register  ( to register a new account)
